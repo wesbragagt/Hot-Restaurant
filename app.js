@@ -1,9 +1,11 @@
 function display(){
     $.get("/api/reservations", function (data) {
         if (data) {
+            console.log(data);
             for (i = 0; i < 4; i++) {
+                console.log(data[i]);
                 var person = $("<li>");
-                person.text(data.name);
+                person.text(data[i].name);
                 $("#tableList").append(person);
             }
         } 
@@ -12,7 +14,7 @@ function display(){
         if (data) {
             for (i = 5; i < data.length; i++) {
                 var person = $("<li>");
-                person.text(data.name);
+                person.text(data[i].name);
                 $("#waitList").append(person);
             }
         } 
@@ -39,7 +41,9 @@ display();
             alert("Adding reservation...");
         });
         console.log(newReservation);
-        display();
+        $("#reserve-name").val("");
+        $("#reserve-phone").val("");
+        $("#reserve-email").val("");
     });
 
     
