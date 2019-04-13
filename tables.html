@@ -1,64 +1,48 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Restaurant Home</title>
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h1 class="text-center">
-          The Best Restaurant in Nashville
-        </h1>
-        <hr />
-        <h2 class="text-center">
-          Current Reservations and Waiting List
-        </h2>
-        <br />
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant Home</title>
 
-        <div class="text-center">
-          <a href="./tables.html"
-            ><button class="btn btn-lg btn-primary">
-              View Tables
-            </button></a
-          >
-          <a href="./reservation.html"
-            ><button class="btn btn-lg btn-danger">
-              Make Reservation
-            </button></a
-          >
-        </div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">
+        The Best Restaurant in Nashville
+      </h1>
+      <hr />
+      <h2 class="text-center">
+        Current Reservations and Waiting List
+      </h2>
+      <br />
+
+      <div class="text-center">
+        <a href="./tables.html"><button class="btn btn-lg btn-primary">
+            View Tables
+          </button></a>
+        <a href="./reservation.html"><button class="btn btn-lg btn-danger">
+            Make Reservation
+          </button></a>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-header">
-              <h4>Current Reservations</h4>
-            </div>
-            <div class="card-body">
-              <ul id="tableList" class="list-group"></ul>
-            </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <h4>Current Reservations</h4>
           </div>
-
-          <div class="card mt-4">
-            <div class="card-header">
-              <h4>Waiting List</h4>
-            </div>
-            <div class="card-body">
-              <ul id="waitList" class="list-group"></ul>
-            </div>
+          <div class="card-body">
+            <ol id="tableList" class="list-group"></ol>
           </div>
         </div>
-      </div>
 
+<<<<<<< HEAD
       <footer class="footer">
         <div class="container">
           <p>
@@ -66,8 +50,28 @@
             <a href="/api/tables">API Tables Link</a> |
             <a href="/api/waitlist">API Wait List</a>
           </p>
+=======
+        <div class="card mt-4">
+          <div class="card-header">
+            <h4>Waiting List</h4>
+          </div>
+          <div class="card-body">
+            <ol id="waitList" class="list-group"></ol>
+          </div>
+>>>>>>> 7cf00034f9b4904d553d836cbe0f807199748f3f
         </div>
-      </footer>
+      </div>
     </div>
-  </body>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          <a href="/api/tables">API Tables Link</a> |
+          <a href="/api/waitlist">API Wait List</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
