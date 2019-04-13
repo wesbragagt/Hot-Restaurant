@@ -13,24 +13,8 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 var reservations = [];
-var tables = [];
-var waitlist = [];
 
-//Create tables info
-function currentTables() {
-    for (var i = 0; i < 4; i++) {
-        tables.push(reservations[i]);
-    }
-};
-currentTables();
 
-//Create waitlist info
-function currentWait() {
-    for (var i = 5; i < reservations.length; i++) {
-        waitlist.push(reservations[i]);
-    }
-};
-currentWait();
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
@@ -40,24 +24,17 @@ app.get("/reservation", function (req, res) {
     res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
-$( document ).ready(function() {
+app.post("/api/reservations", function (req, res) {
+    var newReservation = req.body;
+    reservations.push(newReservation);
+});
 
-    $.get("/api/tables/", function (data) {
-        if (data) {
-            for (i = 0; i < data.length; i++) {
-                var person = $("<li>");
-                person.text(data.name);
-            }
-            $("#reserve-name").show();
-            $("#reserve-name").text(data.name);
-            $("#role").text(data.role);
-            $("#age").text(data.age);
-            $("#force-points").text(data.forcePoints);
-        } else {
-            $("#name").text("The force is not strong with this one. Your character was not found.");
-            $("#stats").hide();
-        }
-    });
+app.get("/api/reservations", function (req, res) {
+    return res.json(reservations);
+});
+
+app.get("/app.js", function (req, res) {
+    res.sendFile(path.join(__dirname, "app.js"));
 });
 
 

@@ -25,13 +25,10 @@
         <h2 class="text-center">Make A Reservation</h2>
         <br />
         <div class="text-center">
-          <a href="./tables.html">
+          <a href="/">
             <button class="btn btn-lg btn-primary">
               View Tables
             </button>
-          </a>
-          <a href="/">
-            <button class="btn btn-lg btn-default">Home</button>
           </a>
         </div>
       </div>
@@ -55,7 +52,7 @@
                   <label for="reserve-email">Email</label>
                   <input type="text" class="form-control" id="reserve-email" />
                 </div>
-                <button type="submit" class="btn btn-primary submit">
+                <button type="submit" class="btn btn-primary submit" id="submit-btn">
                   Submit
                 </button>
               </form>
@@ -73,26 +70,8 @@
         </div>
       </footer>
     </div>
-    <script>
-    $("#submit-btn").on("click", function(event) {
-    event.preventDefault();
-    var newReservation = {
-        name: $("#reserve-name")
-            .val()
-            .trim(),
-        email: $("#reserve-phone")
-            .val()
-            .trim(),
-        phone: $("#reserve-email")
-            .val()
-            .trim()
-    };
-    $.post("/api/reservations", newReservation).then(function(data) {
-        console.log("add.html", data);
-        alert("Adding reservation...");
-    });
-    console.log(newReservation);
-});
-    </script>
+
+
+<script src="./app.js"></script>
   </body>
 </html>

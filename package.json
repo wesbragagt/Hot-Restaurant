@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/wesbragagt/Hot-Restaurant/issues"
   },
-  "homepage": "https://github.com/wesbragagt/Hot-Restaurant#readme"
+  "homepage": "https://github.com/wesbragagt/Hot-Restaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
