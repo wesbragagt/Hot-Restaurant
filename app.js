@@ -2,7 +2,7 @@ function display(){
     $.get("/api/reservations", function (data) {
         if (data) {
             console.log(data);
-            for (i = 0; i < 4; i++) {
+            for (i = 0; i < 5; i++) {
                 console.log(data[i]);
                 var person = $("<li>");
                 person.text(data[i].name);
@@ -38,7 +38,6 @@ display();
         };
         $.post("/api/reservations", newReservation).then(function(data) {
             console.log("add.html", data);
-            alert("Adding reservation...");
         });
         console.log(newReservation);
         $("#reserve-name").val("");
