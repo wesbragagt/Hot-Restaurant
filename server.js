@@ -38,8 +38,6 @@ app.get("/app.js", function (req, res) {
 });
 
 
-
-
 //Listening
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);

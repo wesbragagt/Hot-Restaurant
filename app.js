@@ -39,7 +39,9 @@ display();
             alert("Adding reservation...");
         });
         console.log(newReservation);
-        display();
+        $("#reserve-name").val("");
+        $("#reserve-phone").val("");
+        $("#reserve-email").val("");
     });
 
     
